@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'musics',
     'performers',
     'rest_framework',
-    # 'django_filters',
+    'django_filters',
     'rest_framework_simplejwt',
 ]
 
