@@ -10,6 +10,7 @@ class Music(models.Model):
     genre = models.CharField(max_length=255)
     origin = models.CharField(max_length=255)
     length = models.CharField(max_length=15, null=True, blank=True)
+
     
 
     def __str__(self):

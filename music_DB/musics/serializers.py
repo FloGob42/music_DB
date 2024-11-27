@@ -22,5 +22,3 @@ class MusicSerializer(serializers.ModelSerializer):
 
     def get_performer_name(self, obj):
         return f'{obj.performer.name}'
-
-
