@@ -14,8 +14,8 @@ class PerformerSerializerHyperlink(serializers.HyperlinkedModelSerializer):
         model = Performer
         # Inclure tous les champs du modèle
 
-        fields = ['url', 'name','genre', 'origin', 'birth_date', 'formation_year', 'performer_musics' ]
+        fields = ['id', 'url', 'name','genre', 'origin', 'birth_date', 'formation_year', 'performer_musics' ]
 
     def get_performer_musics(self, obj):
         performer_musics = Music.objects.filter(performer=obj)
-        return [{"title": music.title, "year": music.year} for music in performer_musics]
+        return [{"title": music.title, "year": music.year, "id": music.id} for music in performer_musics]
