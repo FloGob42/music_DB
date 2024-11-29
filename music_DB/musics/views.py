@@ -3,6 +3,7 @@ from .serializers import MusicSerializer
 from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter
+from .filters import MusicFilter
 
 class MusicViewSet(viewsets.ModelViewSet):
     # VueSet pour gérer les opérations CRUD sur les films
@@ -10,10 +11,7 @@ class MusicViewSet(viewsets.ModelViewSet):
     # Utilisation du sérialiseur défini précédemment
     serializer_class = MusicSerializer
     # Ajout des fonctionnalités de filtrage et de tri
-    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    filterset_class = MusicFilter
     # Champs sur lesquels le filtrage est permis
-    filterset_fields = ['title', 'genre', 'year', 'length', 'performer']
-    # Champs sur lesquels le tri est permis
-    ordering_fields = ['title', 'year', 'length', 'genre', 'performer']
-    # Ordre de tri par défaut (par nom croissant)
-    ordering = ['title']
+    filterset_fields = ['title', 'genre', 'year', 'performer']
+    

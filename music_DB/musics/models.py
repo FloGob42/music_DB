@@ -8,7 +8,7 @@ class Music(models.Model):
     performer = models.ForeignKey(Performer, on_delete=models.SET_NULL, null=True, blank=True)
     year = models.IntegerField()
     genre = models.CharField(max_length=255)
-    origin = models.CharField(max_length=255)
+    
     length = models.CharField(max_length=15, null=True, blank=True)
 
     
